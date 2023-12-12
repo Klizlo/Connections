@@ -14,6 +14,9 @@
 		3F020BCF2B28B44E00F99264 /* ConnectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F020BCE2B28B44E00F99264 /* ConnectionsTests.swift */; };
 		3F020BD92B28B44E00F99264 /* ConnectionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F020BD82B28B44E00F99264 /* ConnectionsUITests.swift */; };
 		3F020BDB2B28B44E00F99264 /* ConnectionsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F020BDA2B28B44E00F99264 /* ConnectionsUITestsLaunchTests.swift */; };
+		3F020BE82B28B5DB00F99264 /* ConnectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F020BE72B28B5DB00F99264 /* ConnectionModel.swift */; };
+		3F020BEA2B28BB7800F99264 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F020BE92B28BB7800F99264 /* TileView.swift */; };
+		3F020BEC2B28BC9200F99264 /* ConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F020BEB2B28BC9200F99264 /* ConnectionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		3F020BD42B28B44E00F99264 /* ConnectionsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConnectionsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F020BD82B28B44E00F99264 /* ConnectionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionsUITests.swift; sourceTree = "<group>"; };
 		3F020BDA2B28B44E00F99264 /* ConnectionsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3F020BE72B28B5DB00F99264 /* ConnectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionModel.swift; sourceTree = "<group>"; };
+		3F020BE92B28BB7800F99264 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
+		3F020BEB2B28BC9200F99264 /* ConnectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,7 @@
 		3F020BB12B28B44D00F99264 = {
 			isa = PBXGroup;
 			children = (
+				3F020BE92B28BB7800F99264 /* TileView.swift */,
 				3F020BBC2B28B44D00F99264 /* Connections */,
 				3F020BCD2B28B44E00F99264 /* ConnectionsTests */,
 				3F020BD72B28B44E00F99264 /* ConnectionsUITests */,
@@ -98,6 +105,8 @@
 				3F020BBF2B28B44D00F99264 /* ContentView.swift */,
 				3F020BC12B28B44E00F99264 /* Assets.xcassets */,
 				3F020BC32B28B44E00F99264 /* Preview Content */,
+				3F020BE72B28B5DB00F99264 /* ConnectionModel.swift */,
+				3F020BEB2B28BC9200F99264 /* ConnectionViewModel.swift */,
 			);
 			path = Connections;
 			sourceTree = "<group>";
@@ -258,7 +267,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F020BC02B28B44D00F99264 /* ContentView.swift in Sources */,
+				3F020BE82B28B5DB00F99264 /* ConnectionModel.swift in Sources */,
+				3F020BEA2B28BB7800F99264 /* TileView.swift in Sources */,
 				3F020BBE2B28B44D00F99264 /* ConnectionsApp.swift in Sources */,
+				3F020BEC2B28BC9200F99264 /* ConnectionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
