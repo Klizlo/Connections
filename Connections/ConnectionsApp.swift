@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ConnectionsApp: App {
+    
+    @StateObject var game = ConnectionViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: ConnectionViewModel())
         }
     }
 }

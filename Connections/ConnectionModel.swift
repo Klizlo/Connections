@@ -11,13 +11,16 @@ struct ConnectionModel {
     
     private(set) var tiles: Array<Tile>
     
-    init(tileFactory: (Int) -> (String, String)) {
+    init(groups: [WordGroup]) {
         self.tiles = []
         
-        for index in 0..<16 {
-            let content = tileFactory(index)
-            tiles.append(Tile(text: content.0, group: content.1, id: index))
+        for group in groups {
+            for i in 0...3 {
+                tiles.append(Tile(text: group.words[i], group: group.name, id: "\(group.name+String(i))"))
+            }
         }
+        
+        self.tiles = tiles.shuffled()
     }
     
     struct Tile: Equatable, Identifiable {
@@ -27,7 +30,7 @@ struct ConnectionModel {
         var isSelected: Bool = false
         var isMatched: Bool = false
         
-        var id: Int
+        var id: String
         
     }
 }
