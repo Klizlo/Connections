@@ -39,8 +39,28 @@ class ConnectionViewModel : ObservableObject {
         return ConnectionModel(groups: gameGroups)
     }
     
+    var lifes : Int {
+        model.lifes
+    }
+    
+    var MAX_LIFES : Int {
+        ConnectionModel.MAX_LIFES
+    }
+    
     var tiles : [Tile] {
         model.tiles
+    }
+    
+    func select(tile: Tile) {
+        model.select(tile: tile)
+    }
+    
+    func deselectAll() {
+        model.deselectAll()
+    }
+    
+    func shuffle() {
+        model.shuffle()
     }
     
 }

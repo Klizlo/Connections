@@ -17,6 +17,7 @@
 		3F020BE82B28B5DB00F99264 /* ConnectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F020BE72B28B5DB00F99264 /* ConnectionModel.swift */; };
 		3F020BEA2B28BB7800F99264 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F020BE92B28BB7800F99264 /* TileView.swift */; };
 		3F020BEC2B28BC9200F99264 /* ConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F020BEB2B28BC9200F99264 /* ConnectionViewModel.swift */; };
+		3F245AA12B4DA762004EFDFD /* LifeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F245AA02B4DA762004EFDFD /* LifeView.swift */; };
 		3F73937F2B31EC9300684AE1 /* WordGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F73937E2B31EC9300684AE1 /* WordGroup.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		3F020BE72B28B5DB00F99264 /* ConnectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionModel.swift; sourceTree = "<group>"; };
 		3F020BE92B28BB7800F99264 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
 		3F020BEB2B28BC9200F99264 /* ConnectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionViewModel.swift; sourceTree = "<group>"; };
+		3F245AA02B4DA762004EFDFD /* LifeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeView.swift; sourceTree = "<group>"; };
 		3F73937E2B31EC9300684AE1 /* WordGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordGroup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +112,7 @@
 				3F020BE72B28B5DB00F99264 /* ConnectionModel.swift */,
 				3F020BEB2B28BC9200F99264 /* ConnectionViewModel.swift */,
 				3F73937E2B31EC9300684AE1 /* WordGroup.swift */,
+				3F245AA02B4DA762004EFDFD /* LifeView.swift */,
 			);
 			path = Connections;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				3F73937F2B31EC9300684AE1 /* WordGroup.swift in Sources */,
 				3F020BBE2B28B44D00F99264 /* ConnectionsApp.swift in Sources */,
 				3F020BEC2B28BC9200F99264 /* ConnectionViewModel.swift in Sources */,
+				3F245AA12B4DA762004EFDFD /* LifeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

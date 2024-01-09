@@ -16,7 +16,7 @@ struct TileView: View {
     var body: some View {
         let base = RoundedRectangle(cornerRadius: 10)
         Group{
-            base.fill(.purple)
+            base.fill(tile.isSelected ? .purple : .gray)
                 .overlay(Text(tile.text)
                     .lineLimit(nil)
                     .aspectRatio(contentMode: .fill)
@@ -27,5 +27,5 @@ struct TileView: View {
 }
 
 #Preview {
-    TileView(tile: ConnectionModel.Tile(text: "Strucel naindhabdbabdhadbhjabab", group: "Ciasto", id: "Ciasto0"))
+    TileView(tile: ConnectionModel.Tile(text: "Strucel", group: "Ciasto", id: "Ciasto0"))
 }
