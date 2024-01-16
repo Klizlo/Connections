@@ -10,26 +10,21 @@ import Foundation
 class ConnectionViewModel : ObservableObject {
     
     typealias Tile = ConnectionModel.Tile
+    typealias GroupedTiles = ConnectionModel.GroupedTiles
     
     @Published private var model: ConnectionModel = createGame()
     
-//    private static let groups = [
-//        "Ksywki": ["Ptyś", "Kiciuś", "Ponczuś", "Słodziontko"],
-//        "Planszówki": ["Mix tura", "Posiadłość szaleństwa", "Boss Monster", "Splendor"],
-//        "Metal": ["Symphonic", "Power", "Death", "Folk"],
-//        "Grill": ["Skarpetki", "Majster", "Ogień", "Pijany Szwagier"],
-//        "Pierwsze spotkanie": ["żelki", "meble", "noski noski", "jednorożec"],
-//        "Wykwintne danie": ["boczuś", "biała kiełbaska z futerkiem", "pstrąg temczowy", "skóra z kuraka z roszołu"],
-//        "Moja Ukochana Dziewczyna": ["duck", "peace", "knife", "option"],
-//        "Na pewno nie Krzyś": ["agent", "przewrót", "kur", "kaczki"]]
-//    ]
-    
     private static let groups = [
-        WordGroup(id: UUID(), name: "Ksywki", words: ["Ptyś", "Kiciuś", "Ponczuś", "Słodziontko"]),
+        WordGroup(id: UUID(), name: "Ksywki", words: ["p", "p", "p", "p"]),
         WordGroup(id: UUID(), name: "Planszówki", words: ["Mix tura", "Posiadłość szaleństwa", "Boss Monster", "Splendor"]),
-        WordGroup(id: UUID(), name: "Metal", words: ["Symphonic", "Power", "Death", "Folk"]),
-        WordGroup(id: UUID(), name: "Grill", words: ["Skarpetki", "Majster", "Ogień", "Pijany Szwagier"]),
-        WordGroup(id: UUID(), name: "Słodkość", words: ["żelki", "meble", "noski noski", "jednorożec"])
+        WordGroup(id: UUID(), name: "Metal", words: ["Symfoniczny", "Power", "Gotycki", "Folk"]),
+        WordGroup(id: UUID(), name: "Grill", words: ["g", "g", "g", "g"]),
+        WordGroup(id: UUID(), name: "Słodkość", words: ["żelki", "meble", "noski noski", "jednorożec"]),
+//        WordGroup(id: UUID(), name: "Budowle", words: ["Zamek", "Wieża", "Pałac", "Blok", "Kamienica", "Łuk"]),
+//        WordGroup(id: UUID(), name: "Drzwi", words: ["Zamek", "Klamka", "Judasz", "Skobel", "Wkładka", "Skrzydło"]),
+//        WordGroup(id: UUID(), name: "Broń dystansowa", words: ["Łuk", "Klamka", ""]),
+//        WordGroup(id: UUID(), name: "Anatomia ptaka", words: ["Pióro", "Skrzydło", "Dziób", "Grzebień", "Kości"]),
+//        WordGroup(id: UUID(), name: "", words: [""])
     ]
     
     private static func createGame() -> ConnectionModel {
@@ -51,6 +46,10 @@ class ConnectionViewModel : ObservableObject {
         model.tiles
     }
     
+    var groupedTiles : [GroupedTiles] {
+        model.groupedTiles
+    }
+    
     func select(tile: Tile) {
         model.select(tile: tile)
     }
@@ -61,6 +60,18 @@ class ConnectionViewModel : ObservableObject {
     
     func shuffle() {
         model.shuffle()
+    }
+    
+    func unselect(tile: Tile) {
+        model.unselect(tile: tile)
+    }
+    
+    func showGroupedTiles(groupedTiles: GroupedTiles) {
+        model.showGroupedTiles(groupTiles: groupedTiles)
+    }
+    
+    func checkTilesGroup() {
+        model.checkTilesGroup()
     }
     
 }
