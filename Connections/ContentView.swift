@@ -11,6 +11,8 @@ struct ContentView: View {
     typealias Tile = ConnectionModel.Tile
     
     @ObservedObject var viewModel: ConnectionViewModel
+    @State var isGameOver = false
+    @State var winWin = false
     
     var body: some View {
         VStack {
@@ -24,6 +26,15 @@ struct ContentView: View {
             gameButtons
         }
         .padding()
+        .alert("PRZEMGRAŁEŚ!", isPresented: $isGameOver, actions: {Button("Zamecznij od nowa"){
+            viewModel.restartGame()
+        }})
+        .alert("Gratulacje! wygrałeś", isPresented: $winWin, actions: {
+            Button("Nowa gra"){
+                viewModel.restartGame()
+            }
+        })
+
     }
     
     var gameButtons: some View {
@@ -32,13 +43,13 @@ struct ContentView: View {
             Button(action: {
                 viewModel.shuffle()
             }, label: {
-                Text("Shuffle")
+                Text("Przetasuj")
             })
             Spacer()
             Button(action: {
                 viewModel.deselectAll()
             }, label: {
-                Text("Deselect all")
+                Text("Odznacz wszystkie")
             })
             Spacer()
             Button(action: {
@@ -46,13 +57,21 @@ struct ContentView: View {
                     viewModel.checkTilesGroup()
                 } completion: {
                     let groupedTiles = viewModel.tiles.filter({$0.isMatched && $0.isSelected})
-                    if let groupToShow = viewModel.groupedTiles.first(where: {$0.name == groupedTiles.first!.group}) {
+                    if let groupName = groupedTiles.first, let groupToShow = viewModel.groupedTiles.first(where: {$0.name == groupName.group}) {
                         viewModel.showGroupedTiles(groupedTiles: groupToShow)
                     }
                     groupedTiles.forEach({viewModel.unselect(tile: $0)})
+                    if viewModel.lifes == 0 {
+                        isGameOver = true
+                    }
+                    if viewModel.groupedTiles.filter({
+                        $0.isVisible
+                    }).count == 4 {
+                        winWin = true
+                    }
                 }
             }, label: {
-                Text("Submit")
+                Text("Sprawdź")
             })
             Spacer()
         }.opacity(viewModel.gameStarted ? 1:0)

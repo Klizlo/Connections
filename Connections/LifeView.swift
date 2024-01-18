@@ -11,15 +11,18 @@ struct LifeView: View {
     var remainingLifes: Int
     let MAX_LIVES: Int
     
+    
     var body: some View {
         HStack {
-            Text("Remaining attempts:")
+            Text("Pozostałe próby:")
             lifes
             lostLifes
         }
-    }
+            }
+    
     
     var lifes: some View {
+        
         ForEach(0..<remainingLifes, id: \.self) { _ in
             Circle()
                 .foregroundStyle(.red)
