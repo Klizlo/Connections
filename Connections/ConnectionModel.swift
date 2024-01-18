@@ -13,7 +13,8 @@ struct ConnectionModel {
     private(set) var groupedTiles: Array<GroupedTiles>
     var lifes: Int
     static let MAX_LIFES = 4
-    
+    var gameStarted:Bool = false
+    var buttonPressed:Bool = false
     init(groups: [WordGroup]) {
         self.tiles = []
         self.groupedTiles = []

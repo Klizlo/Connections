@@ -14,20 +14,18 @@ struct ThemeGroupView: View {
     var body: some View {
         let base = RoundedRectangle(cornerRadius: 10)
         Group{
-            base.fill(.pink)
+            base.fill(.yellow)
                 .overlay(groupView)
-                    .lineLimit(nil)
-                    .aspectRatio(contentMode: .fill)
-                    .padding()
+//                    .lineLimit(nil)
+//                    .aspectRatio(contentMode: .fill)
+                .padding(0.9)
         }
     }
     
     var groupView: some View {
         VStack{
-            Text(groupedTiles.name)
-                .font(.largeTitle)
-            Text(groupedTiles.words.joined(separator: ", "))
-                .font(.headline)
+            Text("\(groupedTiles.name): \(groupedTiles.words.joined(separator: ", "))")
+                .font(.subheadline)
         }
     }
 }

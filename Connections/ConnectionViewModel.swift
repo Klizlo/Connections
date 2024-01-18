@@ -11,17 +11,17 @@ class ConnectionViewModel : ObservableObject {
     
     typealias Tile = ConnectionModel.Tile
     typealias GroupedTiles = ConnectionModel.GroupedTiles
-    
     @Published private var model: ConnectionModel = createGame()
     
     private static let groups = [
-        WordGroup(id: UUID(), name: "Ksywki", words: ["p", "p", "p", "p"]),
+        WordGroup(id: UUID(), name: "Alkohol", words: ["Schnapps", "Gorzałka", "Temerska Żytnia", "Zwykły cienkusz", "Mahakamski spiryt"]),
         WordGroup(id: UUID(), name: "Planszówki", words: ["Mix tura", "Posiadłość szaleństwa", "Boss Monster", "Splendor"]),
         WordGroup(id: UUID(), name: "Metal", words: ["Symfoniczny", "Power", "Gotycki", "Folk"]),
-        WordGroup(id: UUID(), name: "Grill", words: ["g", "g", "g", "g"]),
-        WordGroup(id: UUID(), name: "Słodkość", words: ["żelki", "meble", "noski noski", "jednorożec"]),
-//        WordGroup(id: UUID(), name: "Budowle", words: ["Zamek", "Wieża", "Pałac", "Blok", "Kamienica", "Łuk"]),
+//        WordGroup(id: UUID(), name: "Grill", words: ["G", "G", "G", "G"]),
+//        WordGroup(id: UUID(), name: "Słodkości", words: ["s", "s", "s", "s"]),
+        WordGroup(id: UUID(), name: "Budowle", words: ["Zamek", "Wieża", "Pałac", "Blok", "Kamienica"]),
 //        WordGroup(id: UUID(), name: "Drzwi", words: ["Zamek", "Klamka", "Judasz", "Skobel", "Wkładka", "Skrzydło"]),
+        WordGroup(id: UUID(), name: "Drzwi", words: ["Klamka", "Judasz", "Skobel", "Wkładka", "Skrzydło"]),
 //        WordGroup(id: UUID(), name: "Broń dystansowa", words: ["Łuk", "Klamka", ""]),
 //        WordGroup(id: UUID(), name: "Anatomia ptaka", words: ["Pióro", "Skrzydło", "Dziób", "Grzebień", "Kości"]),
 //        WordGroup(id: UUID(), name: "", words: [""])
@@ -49,7 +49,21 @@ class ConnectionViewModel : ObservableObject {
     var groupedTiles : [GroupedTiles] {
         model.groupedTiles
     }
-    
+    var gameStarted: Bool{
+        model.gameStarted
+    }
+    func startGame(){
+        model.gameStarted.toggle()
+    }
+    func restartGame(){
+        model=ConnectionViewModel.createGame()
+    }
+    var buttonPressed: Bool{
+        model.buttonPressed
+    }
+    func pressButton(){
+        model.buttonPressed.toggle()
+    }
     func select(tile: Tile) {
         model.select(tile: tile)
     }
@@ -73,5 +87,6 @@ class ConnectionViewModel : ObservableObject {
     func checkTilesGroup() {
         model.checkTilesGroup()
     }
+    
     
 }

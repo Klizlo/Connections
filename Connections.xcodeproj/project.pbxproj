@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B168E272B56EE99008368BA /* NewGameview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B168E262B56EE99008368BA /* NewGameview.swift */; };
+		1B168E292B56F7AD008368BA /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B168E282B56F7AD008368BA /* PlusButton.swift */; };
 		1B3885A32B505B99006B1DAF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3885A22B505B99006B1DAF /* Extensions.swift */; };
 		1B41C60A2B559346005DDBD2 /* ThemeGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B41C6092B559346005DDBD2 /* ThemeGroupView.swift */; };
 		3F020BBE2B28B44D00F99264 /* ConnectionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F020BBD2B28B44D00F99264 /* ConnectionsApp.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B168E262B56EE99008368BA /* NewGameview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameview.swift; sourceTree = "<group>"; };
+		1B168E282B56F7AD008368BA /* PlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButton.swift; sourceTree = "<group>"; };
 		1B3885A22B505B99006B1DAF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1B41C6092B559346005DDBD2 /* ThemeGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeGroupView.swift; sourceTree = "<group>"; };
 		3F020BBA2B28B44D00F99264 /* Connections.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Connections.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,9 +112,11 @@
 		3F020BBC2B28B44D00F99264 /* Connections */ = {
 			isa = PBXGroup;
 			children = (
+				1B168E262B56EE99008368BA /* NewGameview.swift */,
 				3F020BE92B28BB7800F99264 /* TileView.swift */,
 				3F020BBD2B28B44D00F99264 /* ConnectionsApp.swift */,
 				3F020BBF2B28B44D00F99264 /* ContentView.swift */,
+				1B168E282B56F7AD008368BA /* PlusButton.swift */,
 				3F020BC12B28B44E00F99264 /* Assets.xcassets */,
 				3F020BC32B28B44E00F99264 /* Preview Content */,
 				3F020BE72B28B5DB00F99264 /* ConnectionModel.swift */,
@@ -278,7 +284,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B168E292B56F7AD008368BA /* PlusButton.swift in Sources */,
 				3F020BC02B28B44D00F99264 /* ContentView.swift in Sources */,
+				1B168E272B56EE99008368BA /* NewGameview.swift in Sources */,
 				3F020BE82B28B5DB00F99264 /* ConnectionModel.swift in Sources */,
 				3F020BEA2B28BB7800F99264 /* TileView.swift in Sources */,
 				1B3885A32B505B99006B1DAF /* Extensions.swift in Sources */,

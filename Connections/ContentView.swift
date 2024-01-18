@@ -16,10 +16,11 @@ struct ContentView: View {
         VStack {
             Text("Connections")
                 .font(.system(size: 40))
+            startScreen
             groups
             tiles
                 .animation(.default, value: viewModel.tiles)
-            LifeView(remainingLifes: viewModel.lifes, MAX_LIVES: viewModel.MAX_LIFES)
+            LifeView(remainingLifes: viewModel.lifes, MAX_LIVES: viewModel.MAX_LIFES).opacity(viewModel.gameStarted ? 1:0)
             gameButtons
         }
         .padding()
@@ -43,8 +44,8 @@ struct ContentView: View {
             Button(action: {
                 withAnimation {
                     viewModel.checkTilesGroup()
-                } completion: { 
-                    var groupedTiles = viewModel.tiles.filter({$0.isMatched && $0.isSelected})
+                } completion: {
+                    let groupedTiles = viewModel.tiles.filter({$0.isMatched && $0.isSelected})
                     if let groupToShow = viewModel.groupedTiles.first(where: {$0.name == groupedTiles.first!.group}) {
                         viewModel.showGroupedTiles(groupedTiles: groupToShow)
                     }
@@ -54,7 +55,7 @@ struct ContentView: View {
                 Text("Submit")
             })
             Spacer()
-        }
+        }.opacity(viewModel.gameStarted ? 1:0)
     }
     
     var tiles: some View {
@@ -79,7 +80,7 @@ struct ContentView: View {
                         )
                 }
             }
-        }
+        }.opacity(viewModel.gameStarted ? 1:0)
     }
     
     var groups: some View {
@@ -88,8 +89,19 @@ struct ContentView: View {
                 if groupTiles.isVisible {
                     ThemeGroupView(groupedTiles: groupTiles)
                         .aspectRatio(6/1, contentMode: .fill)
+                        .opacity(groupTiles.isVisible ? 1 : 0)
+                        .animation(.easeIn)
                 }
             }
+        }.opacity(viewModel.gameStarted ? 1:0)
+    }
+    var startScreen:some View {
+        ZStack{
+            PlusButton(viewmodel: viewModel)
+                .opacity(viewModel.gameStarted ? 1:0)
+            NewGameview(viewmodel: viewModel)
+                .opacity(viewModel.gameStarted ? 0:1)
+            
         }
     }
 }
